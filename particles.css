@@ -1,0 +1,32 @@
+@keyframes vertical-move {
+  0% {top: 0; opacity: 0; transform: rotate(0deg);}
+  25% {opacity: 1;}
+  100% {top: calc(100% - 20px); opacity: 0.5; transform: rotate(720deg);}
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 0 10px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.container[data-theme="light"] {
+  background-color: black;
+}
+
+.container .particle{
+  position: relative;
+  top: 0;
+  opacity: 0;
+  transform: rotate(0);
+  animation-name: vertical-move;
+  animation-duration: calc(var(--speed)*2s);
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in;
+}
+
+
+
